@@ -272,5 +272,6 @@ module.exports = {
     ],
     'use-isnan': 'error',
     'valid-typeof': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
   },
 }
