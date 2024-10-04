@@ -1,6 +1,6 @@
 {
   "name": "react-native-country-picker-modal-v2",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "react-native country picker",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
@@ -11,8 +11,8 @@
   "scripts": {
     "start": "yarn config:dev && expo start",
     "start:web": "yarn config:dev && expo start -w --dev",
-    "tsc": "node_modules/.bin/tsc --project tsconfig.json --noEmit",
-    "build": "rm -rf lib/ && node_modules/.bin/tsc --project tsconfig.json && mkdir ./lib && cp -rf ./src/assets ./lib/assets && yarn minify",
+    "tsc": "node_modules/.bin/tsc --noEmit",
+    "build": "rm -rf lib/ && node_modules/.bin/tsc && cp -rf ./src/assets ./lib/assets && yarn minify",
     "minify": "yarn minify:emoji",
     "minify:emoji": "./scripts/minify.js ./lib/assets/data/countries-emoji.json",
     "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
