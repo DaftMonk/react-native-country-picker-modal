@@ -19,6 +19,7 @@ interface Props {
   region?: Region
   subregion?: Subregion
   countryCodes?: CountryCode[]
+  countryItemStyle?: StyleProp<ViewStyle>
   excludeCountries?: CountryCode[]
   preferredCountries?: CountryCode[]
   theme?: Theme
