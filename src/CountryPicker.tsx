@@ -100,7 +100,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
     filterProps,
     modalProps,
     flatListProps,
-    onSelect = () => {},
+    onSelect,
     withEmoji,
     withFilter,
     withCloseButton,
@@ -157,7 +157,9 @@ export const CountryPicker = (props: CountryPickerProps) => {
   const setCountries = (countries: Country[]) =>
     setState({ ...state, countries })
   const onSelectClose = (country: Country) => {
-    onSelect(country)
+    if (onSelect) {
+      onSelect(country)
+    }
     onClose()
   }
   const onFocus = () => setState({ ...state, filterFocus: true })
