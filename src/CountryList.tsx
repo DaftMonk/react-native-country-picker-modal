@@ -158,6 +158,7 @@ interface CountryListProps {
   withAlphaFilter?: boolean
   withCallingCode?: boolean
   withCurrency?: boolean
+  countryItemStyle?: StyleProp<ViewStyle> 
   flatListProps?: FlatListProps<Country>
   onSelect(country: Country): void
 }
@@ -180,6 +181,7 @@ export const CountryList = (props: CountryListProps) => {
     withCallingCode,
     withCurrency,
     onSelect,
+    countryItemStyle,
     filter,
     flatListProps,
     filterFocus = undefined,
@@ -231,6 +233,7 @@ export const CountryList = (props: CountryListProps) => {
           withEmoji,
           withFlag,
           withCallingCode,
+          countryItemStyle,
           withCurrency,
           onSelect,
         })}
