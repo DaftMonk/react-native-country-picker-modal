@@ -54,6 +54,7 @@ interface CountryPickerProps {
   region?: Region
   subregion?: Subregion
   countryCodes?: CountryCode[]
+  countryItemStyle?: StyleProp<ViewStyle> 
   excludeCountries?: CountryCode[]
   preferredCountries?: CountryCode[]
   modalProps?: ModalProps
@@ -122,6 +123,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
     excludeCountries,
     placeholder =  'Select Country',
     preferredCountries,
+    countryItemStyle,
   } = props
   const [state, setState] = useState<State>({
     visible: props.visible || false,
@@ -237,6 +239,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
             filter,
             filterFocus,
             flatListProps,
+            countryItemStyle,
           }}
         />
       </CountryModal>

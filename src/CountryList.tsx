@@ -4,8 +4,10 @@ import {
   View,
   FlatList,
   ScrollView,
+  ViewStyle,
   TouchableOpacity,
   ListRenderItemInfo,
+  StyleProp,
   PixelRatio,
   FlatListProps,
   Dimensions,
@@ -87,6 +89,7 @@ interface CountryItemProps {
   withEmoji?: boolean
   withCallingCode?: boolean
   withCurrency?: boolean
+  countryItemStyle?: StyleProp<ViewStyle> 
   onSelect(country: Country): void
 }
 const CountryItem = (props: CountryItemProps) => {
@@ -98,6 +101,7 @@ const CountryItem = (props: CountryItemProps) => {
     withEmoji,
     withCallingCode = false,
     withCurrency,
+    countryItemStyle,
   } = props
   const extraContent: string[] = []
   if (
@@ -120,7 +124,7 @@ const CountryItem = (props: CountryItemProps) => {
       onPress={() => onSelect(country)}
       {...{ activeOpacity }}
     >
-      <View style={[styles.itemCountry, { height: itemHeight }]}>
+      <View style={[styles.itemCountry, { height: itemHeight }, countryItemStyle]}>
         {withFlag && (
           <Flag
             {...{ withEmoji, countryCode: country.cca2, flagSize: flagSize! }}
